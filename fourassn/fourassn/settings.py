@@ -49,7 +49,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'assn4.urls'
+ROOT_URLCONF = 'fourassn.urls'
 
 TEMPLATES = [
     {
@@ -67,7 +67,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'assn4.wsgi.application'
+WSGI_APPLICATION = 'fourassn.wsgi.application'
 
 
 # Database
