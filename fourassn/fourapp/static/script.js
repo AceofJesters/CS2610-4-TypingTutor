@@ -1,9 +1,11 @@
+//define prompt string
+
 document.addEventListener("keydown", (event) => {
     if (event.key === "Shift") {
-        //If next letter is shifted
-            //Highlight shift key as pressed
+        //If letter in current is shifted
+            //Mark shift key as pressed
             //Change keyboard to be shifted
-            //Prompt for capitol letter
+            //Highlight capital letter
         //Else
             //Change keyboard to be shifted
             //Prompt for shift key
@@ -11,10 +13,103 @@ document.addEventListener("keydown", (event) => {
     if (event.key === "q") {
         keyPressed("q");
     }
+    if (event.key === "w") {
+        keyPressed("w");
+    }
+    if (event.key === "e") {
+        keyPressed("e");
+    }
+    if (event.key === "r") {
+        keyPressed("r");
+    }
+    if (event.key === "t") {
+        keyPressed("t");
+    }
+    if (event.key === "y") {
+        keyPressed("y");
+    }
+    if (event.key === "u") {
+        keyPressed("u");
+    }
+    if (event.key === "i") {
+        keyPressed("i");
+    }
+    if (event.key === "o") {
+        keyPressed("o");
+    }
+    if (event.key === "p") {
+        keyPressed("p");
+    }
+    if (event.key === "a") {
+        keyPressed("a");
+    }
+    if (event.key === "s") {
+        keyPressed("s");
+    }
+    if (event.key === "d") {
+        keyPressed("d");
+    }
+    if (event.key === "f") {
+        keyPressed("f");
+    }
+    if (event.key === "g") {
+        keyPressed("g");
+    }
+    if (event.key === "h") {
+        keyPressed("h");
+    }
+    if (event.key === "j") {
+        keyPressed("j");
+    }
+    if (event.key === "k") {
+        keyPressed("k");
+    }
+    if (event.key === "l") {
+        keyPressed("l");
+    }
+    if (event.key === "z") {
+        keyPressed("z");
+    }
+    if (event.key === "x") {
+        keyPressed("x");
+    }
+    if (event.key === "c") {
+        keyPressed("c");
+    }
+    if (event.key === "v") {
+        keyPressed("v");
+    }
+    if (event.key === "b") {
+        keyPressed("b");
+    }
+    if (event.key === "n") {
+        keyPressed("n");
+    }
+    if (event.key === "m") {
+        keyPressed("m");
+    }
     })
 
 function keyPressed(key) {
     console.log(key);
-    //Highlight key pressed
-    //Update prompt string
+
+    //Add pressed tag to HTML
+
+    //Make event listener for keyup
+    document.addEventListener("keyup", (event) => {
+        //Remove pressed tag from HTML
+        //update prompt string
+    })
+
+    //update prompt string
 }
+
+
+function updatePrompt(prev, curr, next){
+    //If next is empty
+        //Get new prompt
+    //Add curr to prev
+    //Add first of next to curr
+    //Update display
+}
+
