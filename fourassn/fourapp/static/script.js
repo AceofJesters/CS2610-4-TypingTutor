@@ -1,14 +1,36 @@
-//define prompt string
+const promptArray = [
+    "maybe foxes should get to be lazy too",
+    "i wrote most of this code at 4am",
+    "copilot wants me to tell you that i am a genius, which is very sweet",
+]
+
+var promptSplices = ["", "", ""];
+
+function updatePrompt(oldSplices) {
+    if (oldSplices[2].length === 0) {
+        prompt = promptArray[Math.floor(Math.random() * promptArray.length)];
+        promptSplices[0] = "";
+        promptSplices[1] = prompt[0];
+        promptSplices[2] = prompt.slice(1);
+    } else {
+        promptSplices[0] += promptSplices[1];
+        promptSplices[1] = promptSplices[2][0];
+        promptSplices[2] = promptSplices[2].slice(1);
+    }
+    document.getElementsByClassName("typed").innerHTML = promptSplices[0];
+    document.getElementsByClassName("next").innerHTML = promptSplices[1] + promptSplices[2];
+    return promptSplices;
+}
 
 document.addEventListener("keydown", (event) => {
     if (event.key === "Shift") {
         //If letter in current is shifted
-            //Mark shift key as pressed
-            //Change keyboard to be shifted
-            //Highlight capital letter
+        //Mark shift key as pressed
+        //Change keyboard to be shifted
+        //Highlight capital letter
         //Else
-            //Change keyboard to be shifted
-            //Prompt for shift key
+        //Change keyboard to be shifted
+        //Prompt for shift key
     }
     if (event.key === "`") {
         keyPressed("`");
@@ -154,28 +176,24 @@ document.addEventListener("keydown", (event) => {
     if (event.key === " ") {
         keyPressed(" ");
     }
-    })
+})
 
-    function keyPressed(e) {
-        if (e.repeat) return;
-        console.log(e.key + " pressed");
-        document.getElementById(e.key).classList.add("active");
-      }
-      
-      window.addEventListener("keydown", keyPressed);
-      
-      function keyup(e) {
-        document.getElementById(e.key).classList.remove("active");
-      }
-
-      window.addEventListener("keyup", keyup);
-
-
-function updatePrompt(prev, curr, next){
-    //If curr === key
-        //If next is empty
-            //Get new prompt
-        //Add curr to prev
-        //Add first of next to curr
-        //Update display
+function keyPressed(e) {
+    if (e.repeat) return;
+    console.log(e.key + " pressed");
+    if (promptSplices[1] === e.key) {
+        console.log("CORRECT LEVER");
+        updatePrompt(promptSplices);
+    } else {
+        console.log("WRONG LEVER");
+    }
+    document.getElementById(e.key).classList.add("active");
 }
+
+window.addEventListener("keydown", keyPressed);
+
+function keyup(e) {
+    document.getElementById(e.key).classList.remove("active");
+}
+
+window.addEventListener("keyup", keyup);
