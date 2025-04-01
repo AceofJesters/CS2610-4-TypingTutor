@@ -167,7 +167,7 @@ document.addEventListener("keydown", (event) => {
       function keyup(e) {
         document.getElementById(e.key).classList.remove("active");
       }
-      
+
       window.addEventListener("keyup", keyup);
 
 
