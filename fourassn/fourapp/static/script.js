@@ -90,26 +90,26 @@ document.addEventListener("keydown", (event) => {
     }
     })
 
-function keyPressed(key) {
-    console.log(key);
-
-    //Add pressed tag to HTML
-
-    //Make event listener for keyup
-    document.addEventListener("keyup", (event) => {
-        //Remove pressed tag from HTML
-        //update prompt string
-    })
-
-    //update prompt string
-}
+    function keyPressed(e) {
+        if (e.repeat) return;
+        console.log(e.key + " pressed");
+        document.getElementById(e.key).classList.add("active");
+      }
+      
+      window.addEventListener("keydown", keyPressed);
+      
+      function keyup(e) {
+        document.getElementById(e.key).classList.remove("active");
+      }
+      
+      window.addEventListener("keyup", keyup);
 
 
 function updatePrompt(prev, curr, next){
-    //If next is empty
-        //Get new prompt
-    //Add curr to prev
-    //Add first of next to curr
-    //Update display
+    //If curr === key
+        //If next is empty
+            //Get new prompt
+        //Add curr to prev
+        //Add first of next to curr
+        //Update display
 }
-
