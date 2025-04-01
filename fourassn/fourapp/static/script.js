@@ -10,6 +10,45 @@ document.addEventListener("keydown", (event) => {
             //Change keyboard to be shifted
             //Prompt for shift key
     }
+    if (event.key === "`") {
+        keyPressed("`");
+    }
+    if (event.key === "1") {
+        keyPressed("1");
+    }
+    if (event.key === "2") {
+        keyPressed("2");
+    }
+    if (event.key === "3") {
+        keyPressed("3");
+    }
+    if (event.key === "4") {
+        keyPressed("4");
+    }
+    if (event.key === "5") {
+        keyPressed("5");
+    }
+    if (event.key === "6") {
+        keyPressed("6");
+    }
+    if (event.key === "7") {
+        keyPressed("7");
+    }
+    if (event.key === "8") {
+        keyPressed("8");
+    }
+    if (event.key === "9") {
+        keyPressed("9");
+    }
+    if (event.key === "0") {
+        keyPressed("0");
+    }
+    if (event.key === "-") {
+        keyPressed("-");
+    }
+    if (event.key === "=") {
+        keyPressed("=");
+    }
     if (event.key === "q") {
         keyPressed("q");
     }
@@ -40,6 +79,15 @@ document.addEventListener("keydown", (event) => {
     if (event.key === "p") {
         keyPressed("p");
     }
+    if (event.key === "[") {
+        keyPressed("[");
+    }
+    if (event.key === "]") {
+        keyPressed("]");
+    }
+    if (event.key === "\\") {
+        keyPressed("\\");
+    }
     if (event.key === "a") {
         keyPressed("a");
     }
@@ -67,6 +115,12 @@ document.addEventListener("keydown", (event) => {
     if (event.key === "l") {
         keyPressed("l");
     }
+    if (event.key === ";") {
+        keyPressed(";");
+    }
+    if (event.key === "'") {
+        keyPressed("'");
+    }
     if (event.key === "z") {
         keyPressed("z");
     }
@@ -87,6 +141,18 @@ document.addEventListener("keydown", (event) => {
     }
     if (event.key === "m") {
         keyPressed("m");
+    }
+    if (event.key === ",") {
+        keyPressed(",");
+    }
+    if (event.key === ".") {
+        keyPressed(".");
+    }
+    if (event.key === "/") {
+        keyPressed("/");
+    }
+    if (event.key === " ") {
+        keyPressed(" ");
     }
     })
 
