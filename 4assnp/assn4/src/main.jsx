@@ -8,7 +8,6 @@ const promptArray = [
   "copilot wants me to tell you that i am a genius, which is very sweet",
 ]
 
-
 var promptSplices = ["", "", ""];
 
 function updatePrompt(oldSplices) {
@@ -23,9 +22,7 @@ function updatePrompt(oldSplices) {
       promptSplices[1] = promptSplices[2][0];
       promptSplices[2] = promptSplices[2].slice(1);
   }
-  document.getElementsByClassName("typed-phrase").innerHTML = promptSplices[0];
-  document.getElementsByClassName("next").innerHTML = promptSplices[1] + promptSplices[2];
-  return promptSplices;
+    return promptSplices;
 }
 
 updatePrompt(promptSplices);
@@ -190,13 +187,23 @@ function keyPressed(e) {
   if (e.repeat) return;
   console.log(e.key + " pressed");
   if (promptSplices[1] === e.key) {
-      console.log("CORRECT LEVER");
-      updatePrompt(promptSplices);
-      root.render(<React.StrictMode><App typed={promptSplices[0]} next={promptSplices[1] + promptSplices[2]} /></React.StrictMode>);
+    console.log("CORRECT LEVER");
+    updatePrompt(promptSplices);
+    root.render(
+      <React.StrictMode>
+        <App typed={promptSplices[0]} highlighted={promptSplices[1]} next={promptSplices[2]} />
+      </React.StrictMode>
+    );
   } else {
-      console.log("WRONG LEVER");
+    console.log("WRONG LEVER");
   }
-  document.getElementById(e.key).classList.add("active");
+
+  const keyElement = document.getElementById(e.key);
+  if (keyElement) {
+    keyElement.classList.add("active");
+  } else {
+    console.warn(`No element found with id "${e.key}"`);
+  }
 }
 
 window.addEventListener("keydown", keyPressed);
@@ -208,4 +215,4 @@ function keyup(e) {
 window.addEventListener("keyup", keyup);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<React.StrictMode><App typed={promptSplices[0]} next={promptSplices[1] + promptSplices[2]} /></React.StrictMode>);
+root.render(<React.StrictMode><App typed={promptSplices[0]} highlighted={promptSplices[1]} next={promptSplices[2]} /></React.StrictMode>);

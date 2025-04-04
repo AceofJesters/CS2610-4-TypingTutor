@@ -1,11 +1,12 @@
 import './App.css';
 
-function App({ typed, next }) {
+function App({ typed, highlighted, next }) {
   return (
     <div id="root">
       <main className="content">
         <div className="prompt">
           <span className="typed-phrase">{typed}</span>
+          <span className="highlighted">{highlighted}</span>
           <span className="phrase">{next}</span>
         </div>
         <div className="keyboard">
