@@ -6,7 +6,7 @@ function App({ typed, highlighted, next }) {
       <main className="content">
         <div className="prompt">
           <span className="typed-phrase">{typed}</span>
-          <span className="highlighted">{highlighted}</span>
+          <span className="pointer">{highlighted}</span>
           <span className="phrase">{next}</span>
         </div>
         <div className="keyboard">

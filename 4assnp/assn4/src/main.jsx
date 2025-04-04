@@ -3,9 +3,19 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 
 const promptArray = [
-  "maybe foxes should get to be lazy too",
-  "i wrote most of this code at 4am",
-  "copilot wants me to tell you that i am a genius, which is very sweet",
+  "maybe foxes should get to be lazy, too",
+  "the quick brown fox jumps over the lazy dog",
+  "a journey of a thousand miles begins with a single step",
+  "to be or not to be, that is the question",
+  "all that glitters is not gold",
+  "a picture is worth a thousand words",
+  "the only thing we have to fear is fear itself",
+  "the pen is mightier than the sword",
+  "the early bird catches the worm",
+  "a watched pot never boils",
+  "actions speak louder than words",
+  "beauty is in the eye of the beholder",
+  "the grass is always greener on the other side",
 ]
 
 var promptSplices = ["", "", ""];
