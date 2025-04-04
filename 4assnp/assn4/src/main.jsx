@@ -1,12 +1,13 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import App from './App.jsx'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
 
 const promptArray = [
   "maybe foxes should get to be lazy too",
   "i wrote most of this code at 4am",
   "copilot wants me to tell you that i am a genius, which is very sweet",
 ]
+
 
 var promptSplices = ["", "", ""];
 
@@ -16,15 +17,18 @@ function updatePrompt(oldSplices) {
       promptSplices[0] = "";
       promptSplices[1] = prompt[0];
       promptSplices[2] = prompt.slice(1);
+      console.log(promptSplices);
   } else {
       promptSplices[0] += promptSplices[1];
       promptSplices[1] = promptSplices[2][0];
       promptSplices[2] = promptSplices[2].slice(1);
   }
-  document.getElementsByClassName("typed").innerHTML = promptSplices[0];
+  document.getElementsByClassName("typed-phrase").innerHTML = promptSplices[0];
   document.getElementsByClassName("next").innerHTML = promptSplices[1] + promptSplices[2];
   return promptSplices;
 }
+
+updatePrompt(promptSplices);
 
 document.addEventListener("keydown", (event) => {
   if (event.key === "Shift") {
@@ -188,6 +192,7 @@ function keyPressed(e) {
   if (promptSplices[1] === e.key) {
       console.log("CORRECT LEVER");
       updatePrompt(promptSplices);
+      root.render(<React.StrictMode><App typed={promptSplices[0]} next={promptSplices[1] + promptSplices[2]} /></React.StrictMode>);
   } else {
       console.log("WRONG LEVER");
   }
@@ -202,9 +207,5 @@ function keyup(e) {
 
 window.addEventListener("keyup", keyup);
 
-
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-)
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<React.StrictMode><App typed={promptSplices[0]} next={promptSplices[1] + promptSplices[2]} /></React.StrictMode>);
